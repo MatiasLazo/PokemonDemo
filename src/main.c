@@ -21,7 +21,7 @@ int main() {
             screen[(rectY + y) * 240 + (rectX + x)] = color;
         }
     }
-
+//error
     // Infinite loop to keep the program running
     while (1);
 }
