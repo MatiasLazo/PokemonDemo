@@ -12,13 +12,13 @@ int main() {
     int rectY = 40;        // Y position of the rectangle (top-left corner)
     int rectWidth = 100;   // Width of the rectangle
     int rectHeight = 60;   // Height of the rectangle
-    u16 color = RGB8(0, 255, 0);  // Rectangle color (green)
+    u16 colorx = RGB8(0, 255, 0);  // Rectangle color (green)
 
     // Draw the rectangle by setting pixels in the specified area
     for (int x = 0; x < rectWidth; x++) {
         for (int y = 0; y < rectHeight; y++) {
             // Calculate the screen position based on rectX and rectY
-            screen[(rectY + y) * 240 + (rectX + x)] = color;
+            screen[(rectY + y) * 240 + (rectX + x)] = colorx;
         }
     }
 //error
