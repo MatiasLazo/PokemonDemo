@@ -7,10 +7,18 @@ int main() {
     // Cast MODE3_FB to (volatile u16*) so that each pixel can be modified
     volatile u16* screen = (volatile u16*)MODE3_FB;
 
-    // Fill the screen with a color (e.g., bright red)
-    for (int x = 0; x < 240; x++) {
-        for (int y = 0; y < 160; y++) {
-            screen[y * 240 + x] = RGB8(255, 0, 0);  // Set color to red
+    // Rectangle parameters
+    int rectX = 50;        // X position of the rectangle (top-left corner)
+    int rectY = 40;        // Y position of the rectangle (top-left corner)
+    int rectWidth = 100;   // Width of the rectangle
+    int rectHeight = 60;   // Height of the rectangle
+    u16 color = RGB8(0, 255, 0);  // Rectangle color (green)
+
+    // Draw the rectangle by setting pixels in the specified area
+    for (int x = 0; x < rectWidth; x++) {
+        for (int y = 0; y < rectHeight; y++) {
+            // Calculate the screen position based on rectX and rectY
+            screen[(rectY + y) * 240 + (rectX + x)] = color;
         }
     }
 
